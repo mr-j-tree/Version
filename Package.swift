@@ -1,6 +1,16 @@
+// swift-tools-version:5.1
+
 import PackageDescription
 
-_ = Package(
-      name: "Version",
-      exclude: [ "VersionTests" ]
-    )
+let package = Package(
+    name: "Version",
+    products: [
+        .library(
+            name: "Version",
+            targets: ["Version"]
+        )
+    ],
+    targets: [
+        .target(name: "Version", path: "Version")
+    ]
+)
