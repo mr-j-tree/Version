@@ -11,6 +11,6 @@ let package = Package(
         )
     ],
     targets: [
-        .target(name: "Version", path: "Version")
+        .target(name: "Version")
     ]
 )
