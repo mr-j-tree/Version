@@ -250,13 +250,17 @@ extension Version: ExpressibleByStringLiteral {
 
 extension Version: Codable {}
 
+#if !os(Linux)
+
 // MARK: Foundation Extensions
 
 extension Bundle {
+    
     /// The marketing version number of the bundle.
     public var version : Version? {
         return self.versionFromInfoDicitionary(forKey: String(kCFBundleVersionKey))
     }
+    
     
     /// The short version number of the bundle.
     public var shortVersion : Version? {
@@ -277,6 +281,8 @@ extension Bundle {
         }
     }
 }
+
+#endif
 
 extension ProcessInfo {
     /// The version of the operating system on which the process is executing.
