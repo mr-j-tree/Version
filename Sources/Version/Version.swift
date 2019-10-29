@@ -250,7 +250,7 @@ extension Version: ExpressibleByStringLiteral {
 
 extension Version: Codable {}
 
-#if !os(Linux)
+#if os(macOS) || os(iOS) || os(tvOS)
 
 // MARK: Foundation Extensions
 
